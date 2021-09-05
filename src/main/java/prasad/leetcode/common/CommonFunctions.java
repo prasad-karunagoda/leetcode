@@ -17,4 +17,17 @@ public final class CommonFunctions {
         }
         return map;
     }
+
+    public static boolean isPalindrome(String str) {
+        int forward = 0;
+        int backward = str.length() - 1;
+        while (forward < backward) {
+            if (str.charAt(forward) != str.charAt(backward)) {
+                return false;
+            }
+            forward++;
+            backward--;
+        }
+        return true;
+    }
 }
