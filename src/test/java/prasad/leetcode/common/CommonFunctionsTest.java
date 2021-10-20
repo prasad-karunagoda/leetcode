@@ -29,4 +29,15 @@ public class CommonFunctionsTest {
     public void testIsPalindrome05() {
         Assert.assertFalse(CommonFunctions.isPalindrome("ab"));
     }
+
+    @Test
+    public void testGetLowercaseCharacterCounts01() {
+        int[] counts = CommonFunctions.getLowercaseCharacterCounts("acabbadc");
+        int[] expected = new int[26];
+        expected[0] = 3; // a
+        expected[1] = 2; // b
+        expected[2] = 2; // c
+        expected[3] = 1; // d
+        Assert.assertArrayEquals(expected, counts);
+    }
 }

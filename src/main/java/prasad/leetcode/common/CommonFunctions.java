@@ -18,6 +18,17 @@ public final class CommonFunctions {
         return map;
     }
 
+    public static int[] getLowercaseCharacterCounts(String str) {
+        int[] counts = new int[26];
+        for (char c : str.toCharArray()) {
+            if (c < 'a' || c > 'z') {
+                throw new IllegalArgumentException("Only lowercase letters are supported.");
+            }
+            counts[c - 'a']++;
+        }
+        return counts;
+    }
+
     public static boolean isPalindrome(String str) {
         int forward = 0;
         int backward = str.length() - 1;
