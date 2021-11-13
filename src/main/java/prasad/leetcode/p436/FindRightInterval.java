@@ -21,7 +21,7 @@ public class FindRightInterval {
             boolean rightIntervalFound = false;
             for (int k = 0; k < starts.length; k++) {
                 if (starts[k] >= end) {
-                    rightIntervalIndices[i] = startToIntervalIndexMap.get(starts[k]);;
+                    rightIntervalIndices[i] = startToIntervalIndexMap.get(starts[k]);
                     rightIntervalFound = true;
                     break;
                 }
