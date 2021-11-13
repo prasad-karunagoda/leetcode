@@ -6,8 +6,8 @@ public class SingleElementInSortedArray {
      * Specification of the input is strict. That is, every element appears exactly twice, except for one element.
      * And the input array is sorted. Therefore we can take this pairing approach.
      *
-     * Take pairs from the beginning. If the pair does not have the same value, then first element of the pair is
-     * a single element.
+     * Take pairs from the beginning. If a pair does not have the same value, then first element of that pair is
+     * the single element.
      */
     public int singleNonDuplicate(int[] nums) {
         int pairCount = nums.length / 2;
