@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class BasicUnionFind {
 
-    private int[] parents;
-    private int[] size;
+    private final int[] parents;
+    private final int[] size;
 
     public BasicUnionFind(int N) {
         parents = new int[N];
