@@ -40,4 +40,24 @@ public class CommonFunctionsTest {
         expected[3] = 1; // d
         Assert.assertArrayEquals(expected, counts);
     }
+
+    @Test
+    public void testLeastCommonMultiple01() {
+        Assert.assertEquals(60, CommonFunctions.leastCommonMultiple(new int[] {4,3,5}));
+    }
+
+    @Test
+    public void testLeastCommonMultiple02() {
+        Assert.assertEquals(5, CommonFunctions.leastCommonMultiple(new int[] {5}));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLeastCommonMultiple03() {
+        Assert.assertEquals(0, CommonFunctions.leastCommonMultiple(new int[0]));
+    }
+
+    @Test
+    public void testLeastCommonMultiple04() {
+        Assert.assertEquals(180, CommonFunctions.leastCommonMultiple(new int[] {6,9,4,15}));
+    }
 }

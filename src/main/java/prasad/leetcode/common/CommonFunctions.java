@@ -1,6 +1,7 @@
 package prasad.leetcode.common;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,5 +63,36 @@ public final class CommonFunctions {
             }
         }
         return newPermutations;
+    }
+
+    public static int leastCommonMultiple(int[] nums) {
+        if (nums.length == 0) {
+            throw new IllegalArgumentException("Input array is empty.");
+        }
+        for (int n : nums) {
+            if (n <= 0) {
+                throw new IllegalArgumentException("Input numbers must be greater than 0.");
+            }
+        }
+
+        Arrays.sort(nums);
+        int largest = nums[nums.length - 1];
+        int[] otherNums = new int[nums.length - 1];
+        System.arraycopy(nums, 0, otherNums, 0, nums.length - 1);
+
+        int lcm = largest;
+        while (!isAllDivisible(lcm, otherNums)) {
+            lcm += largest;
+        }
+        return lcm;
+    }
+
+    private static boolean isAllDivisible(int multiple, int[] nums) {
+        for (int n : nums) {
+            if (multiple % n != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
